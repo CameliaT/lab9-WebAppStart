@@ -1,20 +1,36 @@
-<html>
+<>
 <head>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 
 
-<body>
-    <h2>A servlet example!</h2>
+<br>
+    <h2>Kids CookBook!</h2><br>
 
-    <form action="someServlet" method="post">
-        Input1:<input type="text" name="input1"/><br />
-        Input2:<input type="text" name="input2"/><br />
+        <select name="type">Type
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Desert">Desert</option>
+        </select></br></br>
+
+        Name: <input type="text" name="name"/><br />
+        Ingredients: <input type="text" name="ingredients"/><br />
+        Instructions: <input type="text" name="instructions"/><br />
+        Duration: <input type="text" name="duration"/><br />
+
+
+
         <input type="submit" value="Submit"/>&nbsp;
+
     </form>
 
-    <form action="someServlet" method="get">
+
+
         <input type="submit" value="GetInfo"/>
     </form>
+
 </body>
 </html>
