@@ -10,8 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/someServlet")
-public class SomeServlet extends HttpServlet {
+@WebServlet("/KidsRecepies")
+public class KidsRecipies extends HttpServlet {
 
     private int counter;
 
@@ -20,16 +20,21 @@ public class SomeServlet extends HttpServlet {
         counter++;
 
         //get input as string
-        String input1 = request.getParameter("input1");
-        String input2 = request.getParameter("input2");
+        String name = request.getParameter("name");
+        String ingredients = request.getParameter("ingredients");
+        String instructions = request.getParameter("instructions");
+        String duration = request.getParameter("duration");
+        String type = request.getParameter("type");
 
-        System.out.println(input1 + input2);
+
+
+        System.out.println(name + type);
         // write results to response
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        out.println("<h2>Are you sure? </h2>");
-        out.println("input1 - <b>" + input1 + "</b><br/>");
-        out.println("input2 - <b>" + input2 + "</b><br/>");
+        out.println("<h2>Kids CookBook - Recipies</h2>");
+        out.println("name - <b>" + name + "</b><br/>");
+        out.println("type - <b>" + type + "</b><br/>");
         out.println("<a href='/'>Go Back</a>");
 
         // finished writing, send to browser
