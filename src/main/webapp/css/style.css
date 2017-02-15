@@ -1,34 +1,44 @@
 body {
-   background-color: powderblue;
+   background-color: lightgreen;
+
 }
 p {
     text-indent: 15px;
     color: green;
  }
 
-h1 {
+/*h1 {
 
     font-size: 1.8em;
     margin: 10px 0 5px 0;
- }
+
+ }*/
 
 
 
 h2 {
-    background: darkgrey;
-    font-size: 1.5em;
-    margin: 10px 0 5px 0;
+
+    font-size: 65px;
+    font-family: "Gloria Hallelujah", cursive;
+    margin: 25px 25px 25px 10px;
+    padding-bottom: 80px;
+    padding-left: 450px;
+    background: #f0f8ff url("http://www.costulessdirect.com/wp-content/uploads/2015/06/Heart-Healthy-Foods.jpg");
+    background-size:cover;
+    min-height: 230px;
+    color: red;
+
+
  }
 
 strong {
-    font-weight: bold;
+    font-weight: bolder;
  }
 ul, ol {
-     margin-left: 35px;
+     margin-left: 50px;
  }
 
 header {
-     padding: 20px;
-     min-height: 60px;
-     background-color: green;
+     padding: 120px;
+     min-height: 140px;
  }

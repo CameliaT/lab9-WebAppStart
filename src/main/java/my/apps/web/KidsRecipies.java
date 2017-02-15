@@ -25,6 +25,7 @@ public class KidsRecipies extends HttpServlet {
         String instructions = request.getParameter("instructions");
         String duration = request.getParameter("duration");
         String type = request.getParameter("type");
+        Recipies recipies = new Recipies(name, ingredients, instructions, duration, type);
 
 
 
@@ -32,9 +33,10 @@ public class KidsRecipies extends HttpServlet {
         // write results to response
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        out.println("<h2>Kids CookBook - Recipies</h2>");
-        out.println("name - <b>" + name + "</b><br/>");
-        out.println("type - <b>" + type + "</b><br/>");
+        out.println("<h2>CookBook for kids</h2>");
+        // out.println("name - <b>" + name + "</b><br/>");
+        // out.println("type - <b>" + type + "</b><br/>");
+        out.println("<b>"+ recipies.toString()+ "</b><br />");
         out.println("<a href='/'>Go Back</a>");
 
         // finished writing, send to browser
