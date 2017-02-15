@@ -27,9 +27,18 @@ h2 {
     background-size:cover;
     min-height: 230px;
     color: red;
-
-
  }
+
+h3{
+    font-size: 50px;
+    font-family: 'Pacifico', cursive;
+    padding-left: 850px;
+    background: #f0f8ff url("http://www.chegg.com/play/wp-content/uploads/sites/3/2013/02/cooking-college.jpg");
+    background-size:cover;
+    min-height: 230px;
+    margin: 10px 0 5px 0;
+    color: darkred;
+}
 
 strong {
     font-weight: bolder;

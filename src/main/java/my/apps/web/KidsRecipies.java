@@ -33,7 +33,8 @@ public class KidsRecipies extends HttpServlet {
         // write results to response
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        out.println("<h2>CookBook for kids</h2>");
+        out.println("<h3>CookBook</h3>");
+        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
         // out.println("name - <b>" + name + "</b><br/>");
         // out.println("type - <b>" + type + "</b><br/>");
         out.println("<b>"+ recipies.toString()+ "</b><br />");
