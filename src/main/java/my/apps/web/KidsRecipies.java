@@ -6,9 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet("/KidsRecepies")
 public class KidsRecipies extends HttpServlet {
@@ -25,7 +22,7 @@ public class KidsRecipies extends HttpServlet {
         String instructions = request.getParameter("instructions");
         String duration = request.getParameter("duration");
         String type = request.getParameter("type");
-        Recipies recipies = new Recipies(name, ingredients, instructions, duration, type);
+        Recipes recipes = new Recipes(name, ingredients, instructions, duration, type);
 
 
 
@@ -37,7 +34,7 @@ public class KidsRecipies extends HttpServlet {
         out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
         // out.println("name - <b>" + name + "</b><br/>");
         // out.println("type - <b>" + type + "</b><br/>");
-        out.println("<b>"+ recipies.toString()+ "</b><br />");
+        out.println("<b>"+ recipes.toString()+ "</b><br />");
         out.println("<a href='/'>Go Back</a>");
 
         // finished writing, send to browser

@@ -3,7 +3,7 @@ package my.apps.web;
 /**
  * Created by camelia on 14/02/2017.
  */
-public class Recipies {
+public class Recipes {
 
     private String name;
     private String ingredients;
@@ -11,7 +11,7 @@ public class Recipies {
     private String duration;
     private String type;
 
-    public Recipies (String name, String ingredients, String instructions, String duration, String type){
+    public Recipes(String name, String ingredients, String instructions, String duration, String type){
         this.name = name;
         this.ingredients = ingredients;
         this.instructions = instructions;
@@ -41,7 +41,7 @@ public class Recipies {
 
     @Override
     public String toString(){
-        return "Recipies{" +
+        return "Recipes{" +
                 "name='" + name + '\'' +
                 ", ingredients='" + ingredients + '\'' +
                 ", instructions='" + instructions + '\'' +
