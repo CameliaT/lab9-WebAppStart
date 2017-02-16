@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/KidsRecepies")
-public class KidsRecipies extends HttpServlet {
+@WebServlet("/KidsRecipes")
+public class KidsRecipes extends HttpServlet {
 
     private int counter;
 

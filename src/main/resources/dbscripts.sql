@@ -1,4 +1,4 @@
-CREATE TABLE recepies (
+CREATE TABLE recepes (
     id bigserial NOT NULL PRIMARY KEY,
     type character (20),
     name character(20),
