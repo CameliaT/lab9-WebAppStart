@@ -52,7 +52,7 @@ public class RecipeRepository {
         Statement st = conn.createStatement();
 
         //execute a query
-        ResultSet rs = st.executeQuery("SELECT type, name, ingredients, instructions, duration FROM recipes");
+        ResultSet rs = st.executeQuery("SELECT id, type, name, ingredients, instructions, duration FROM recipe");
 
         //iterate the result set and print the values
         List<Recipes> recipes = new ArrayList<>();
@@ -65,6 +65,7 @@ public class RecipeRepository {
                     rs.getString("duration")
 
             );
+            recipe.setId(rs.getLong("id"));
             recipes.add(recipe);;
 
         }

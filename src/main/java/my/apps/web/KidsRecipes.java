@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet("/kidsRecipes")
 public class KidsRecipes extends HttpServlet {
@@ -50,13 +51,16 @@ public class KidsRecipes extends HttpServlet {
             out.println("<div class='error'><b>Unable to write to database! " +  e.getMessage() +"<b></div>");
         }
 
-        out.println("<a href='/'>Go Back</a>");
+        addGoBack(out);
 
         // finished writing, send to browser
         out.close();
 
     }
 
+    private void addGoBack(PrintWriter out){
+        out.println("<a href='/'>Go Back</a>");
+    }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         counter++;
@@ -70,12 +74,17 @@ public class KidsRecipes extends HttpServlet {
         try {
             out.println("<h4>Get Recipes</h4>");
             out.println(counter);
-            recipeRepository.read();
+
+            List<Recipes> recipes = recipeRepository.read();
+            for (Recipes recipe : recipes){
+                out.println(recipe.toString());
+            }
         } catch (ClassNotFoundException e){
             out.println("<div class='error'><b>Unable initialize database connection<b></div>");
         } catch (SQLException e){
             out.println("<div class='error'><b>Unable to write to database! " +  e.getMessage() +"<b></div>");
         }
+        addGoBack(out);
         out.close();
     }
 
