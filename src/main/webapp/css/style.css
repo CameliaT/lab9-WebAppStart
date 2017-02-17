@@ -38,6 +38,8 @@ h3{
     min-height: 230px;
     margin: 10px 0 5px 0;
     color: darkred;
+
+
 }
 
 strong {
@@ -46,8 +48,16 @@ strong {
 ul, ol {
      margin-left: 50px;
  }
+.error {
+    font-family: 'Kaushan Script', cursive;
+    color: darkred;
+
+}
+
 
 header {
      padding: 120px;
      min-height: 140px;
  }
+
+font-w

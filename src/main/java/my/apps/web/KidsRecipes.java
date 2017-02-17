@@ -1,4 +1,6 @@
 package my.apps.web;
+import my.apps.db.RecipeRepository;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -6,11 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 @WebServlet("/KidsRecipes")
 public class KidsRecipes extends HttpServlet {
 
     private int counter;
+
+    private RecipeRepository recipeRepository = new RecipeRepository();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,11 +35,21 @@ public class KidsRecipes extends HttpServlet {
         // write results to response
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        out.println("<h3>CookBook</h3>");
         out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
         // out.println("name - <b>" + name + "</b><br/>");
         // out.println("type - <b>" + type + "</b><br/>");
         out.println("<b>"+ recipes.toString()+ "</b><br />");
+
+      try {
+            out.println("<h3>CookBook</h3>");
+            recipeRepository.insert(recipes);
+            out.println("<b>"+ recipes.toString()+ "</b><br />");
+        } catch (ClassNotFoundException e) {
+            out.println("<div class='error'><b>Unable initialize database connection<b></div>");
+        } catch (SQLException e){
+            out.println("<div class='error'><b>Unable to write to database!<b></div>");
+        }
+
         out.println("<a href='/'>Go Back</a>");
 
         // finished writing, send to browser
