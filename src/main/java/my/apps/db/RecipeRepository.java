@@ -2,10 +2,9 @@ package my.apps.db;
 
 import my.apps.web.Recipes;
 
-import java.sql.SQLException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by camelia on 16/02/2017.
@@ -40,6 +39,41 @@ public class RecipeRepository {
         pSt.close();
         conn.close();
 
+    }
+
+    public List<Recipes> read() throws ClassNotFoundException, SQLException {
+        //load the driver
+        Class.forName("org.postgresql.Driver");
+
+        //obtain connection
+        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
+        //create a query statement
+        Statement st = conn.createStatement();
+
+        //execute a query
+        ResultSet rs = st.executeQuery("SELECT type, name, ingredients, instructions, duration FROM recipes");
+
+        //iterate the result set and print the values
+        List<Recipes> recipes = new ArrayList<>();
+        while (rs.next()){
+            Recipes recipe = new Recipes(
+                    rs.getString("type"),
+                    rs.getString("name"),
+                    rs.getString("ingredients"),
+                    rs.getString("instructions"),
+                    rs.getString("duration")
+
+            );
+            recipes.add(recipe);;
+
+        }
+
+        //close the object
+        rs.close();
+        st.close();
+        conn.close();
+        return recipes;
     }
 
 
