@@ -1,5 +1,12 @@
 package my.apps.db;
 
+import my.apps.web.Recipes;
+
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
 /**
  * Created by camelia on 16/02/2017.
  */
@@ -9,6 +16,31 @@ public class RecipeRepository {
     final static String URL = "jdbc:postgresql://IP:5432/test";
     final static String USERNAME = "fasttrackit_dev";
     final static String PASSWORD = "fasttrackit_dev";
+
+    public void insert(Recipes recipe) throws ClassNotFoundException, SQLException {
+        // 1. load the driver
+        Class.forName("org.postgresql.Driver");
+
+        // 2. obtain a connection
+        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
+        // 3. create a query statement
+        PreparedStatement pSt = conn.prepareStatement("INSERT INTO recipes ( type, name, ingredients, instructions, duration) VALUES (?,?, ?, ?, ?)");
+        pSt.setString(1, recipe.getType());
+        pSt.setString(2, recipe.getName());
+        pSt.setString(3, recipe.getIngredients());
+        pSt.setString(4, recipe.getInstructions());
+        pSt.setString(5, recipe.getDuration());
+
+        // 4. execute a prepared statement
+        int rowsInserted = pSt.executeUpdate();
+        System.out.println("Inserted " + rowsInserted + " rows.");
+
+        // 5. close the objects
+        pSt.close();
+        conn.close();
+
+    }
 
 
 }
