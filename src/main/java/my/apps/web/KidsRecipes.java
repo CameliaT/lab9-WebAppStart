@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-@WebServlet("/KidsRecipes")
+@WebServlet("/kidsRecipes")
 public class KidsRecipes extends HttpServlet {
 
     private int counter;
