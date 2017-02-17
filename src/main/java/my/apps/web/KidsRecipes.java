@@ -63,10 +63,11 @@ public class KidsRecipes extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         out.println("<head>");
-        out.println("<title> Get count </title>");
+        out.println("<title> Get Recipes </title>");
+        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
         out.println("</head>");
 
-        out.println("<h2>Get count</h2>");
+        out.println("<h4>Get Recipes</h4>");
         out.println(counter);
         out.close();
     }
