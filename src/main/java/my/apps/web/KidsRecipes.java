@@ -67,8 +67,15 @@ public class KidsRecipes extends HttpServlet {
         out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
         out.println("</head>");
 
-        out.println("<h4>Get Recipes</h4>");
-        out.println(counter);
+        try {
+            out.println("<h4>Get Recipes</h4>");
+            out.println(counter);
+            recipeRepository.read();
+        } catch (ClassNotFoundException e){
+            out.println("<div class='error'><b>Unable initialize database connection<b></div>");
+        } catch (SQLException e){
+            out.println("<div class='error'><b>Unable to write to database! " +  e.getMessage() +"<b></div>");
+        }
         out.close();
     }
 
