@@ -47,7 +47,7 @@ public class KidsRecipes extends HttpServlet {
         } catch (ClassNotFoundException e) {
             out.println("<div class='error'><b>Unable initialize database connection<b></div>");
         } catch (SQLException e){
-            out.println("<div class='error'><b>Unable to write to database!<b></div>");
+            out.println("<div class='error'><b>Unable to write to database! " +  e.getMessage() +"<b></div>");
         }
 
         out.println("<a href='/'>Go Back</a>");
