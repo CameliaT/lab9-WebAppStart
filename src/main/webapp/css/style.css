@@ -46,6 +46,22 @@ h4{
     color: darkred;
 }
 
+table {
+    font-family: "Gloria Hallelujah", cursive;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #dddddd;
+}
+
 strong {
     font-weight: bolder;
  }

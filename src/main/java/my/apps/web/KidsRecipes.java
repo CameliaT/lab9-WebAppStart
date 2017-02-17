@@ -36,10 +36,7 @@ public class KidsRecipes extends HttpServlet {
         // write results to response
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
-        // out.println("name - <b>" + name + "</b><br/>");
-        // out.println("type - <b>" + type + "</b><br/>");
-        out.println("<b>"+ recipes.toString()+ "</b><br />");
+        addStyle(out);
 
       try {
             out.println("<h3>CookBook</h3>");
@@ -68,17 +65,33 @@ public class KidsRecipes extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.println("<head>");
         out.println("<title> Get Recipes </title>");
-        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
+        addStyle(out);
         out.println("</head>");
 
         try {
             out.println("<h4>Get Recipes</h4>");
-            out.println(counter);
+            out.println("<table>");
+            out.println("<tr>");
+            out.println("<th>Id</th>");
+            out.println("<th>Type</th>");
+            out.println("<th>Name</th>");
+            out.println("<th>Ingredients</th>");
+            out.println("<th>Instructions</th>");
+            out.println("<th>Duration</th>");
+            out.println("</tr>");
 
             List<Recipes> recipes = recipeRepository.read();
             for (Recipes recipe : recipes){
-                out.println(recipe.toString());
+                out.println("<tr>");
+                out.println("<td>"+recipe.getId()+"</td>");
+                out.println("<td>"+recipe.getName()+"</td>");
+                out.println("<td>"+recipe.getIngredients()+"</td>");
+                out.println("<td>"+recipe.getInstructions()+"</td>");
+                out.println("<td>"+recipe.getDuration()+"</td>");
+                out.println("</tr>");
             }
+            out.println("</table>");
+
         } catch (ClassNotFoundException e){
             out.println("<div class='error'><b>Unable initialize database connection<b></div>");
         } catch (SQLException e){
@@ -86,6 +99,10 @@ public class KidsRecipes extends HttpServlet {
         }
         addGoBack(out);
         out.close();
+    }
+
+    private void addStyle (PrintWriter out){
+        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
     }
 
     @Override
