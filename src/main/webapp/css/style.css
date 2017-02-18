@@ -57,6 +57,10 @@ td, th {
     text-align: left;
     padding: 8px;
 }
+.error {
+    font-family: 'Lobster Two', cursive;
+    color: darkred;
+}
 
 tr:nth-child(even){
     background-color: #dddddd;
@@ -68,11 +72,6 @@ strong {
 ul, ol {
      margin-left: 50px;
  }
-.error {
-    font-family: 'Kaushan Script', cursive;
-    color: darkred;
-
-}
 
 
 header {
