@@ -84,6 +84,7 @@ public class KidsRecipes extends HttpServlet {
             for (Recipes recipe : recipes){
                 out.println("<tr>");
                 out.println("<td>"+recipe.getId()+"</td>");
+                out.println("<td>"+recipe.getType()+"</td>");
                 out.println("<td>"+recipe.getName()+"</td>");
                 out.println("<td>"+recipe.getIngredients()+"</td>");
                 out.println("<td>"+recipe.getInstructions()+"</td>");
