@@ -6,18 +6,24 @@ package my.apps.web;
 public class Recipes {
 
     private Long id;
+    private String type;
     private String name;
     private String ingredients;
     private String instructions;
     private String duration;
-    private String type;
 
-    public Recipes(String name, String ingredients, String instructions, String duration, String type){
+
+    public Recipes(String type, String name, String ingredients, String instructions, String duration){
+        this.type = type;
         this.name = name;
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.duration = duration;
-        this.type = type;
+
+    }
+
+    public String getType() {
+        return type;
     }
 
     public String getName() {
@@ -36,9 +42,6 @@ public class Recipes {
         return duration;
     }
 
-    public String getType() {
-        return type;
-    }
 
     public Long getId(){
         return id;
@@ -50,12 +53,12 @@ public class Recipes {
 
     @Override
     public String toString(){
-        return "Recipes{" +
-                "name='" + name + '\'' +
+        return "Recipe{" +
+                "type='" + type + '\'' +
+                ", name='" + name + '\'' +
                 ", ingredients='" + ingredients + '\'' +
                 ", instructions='" + instructions + '\'' +
                 ", duration='" + duration + '\'' +
-                ", type='" + type + '\'' +
                 '}';
     }
 }

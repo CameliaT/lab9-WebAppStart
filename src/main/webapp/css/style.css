@@ -1,15 +1,38 @@
 body {
    background-color: lightgreen;
+    background-image: url("http://www.chainimage.com/images/healthy-food-for-kids-healthy-food-house.jpg");
+    background-size: cover;
+
 
 }
 p {
-    text-indent: 40px;
-    color: green;
+    text-indent: 20px;
+    font-family: "Gloria Hallelujah", cursive;
+    font-size: 20px;
+    color: black;
+    padding-left: 30px;
  }
 
+select {
+    margin-left: 180px;
+    margin-bottom: 30px;
+    background-color: antiquewhite;
+    font-size: 20px;
+    font-family: "Franklin Gothic Medium";
+}
+
+input {
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    background-color: azure;
+    font-family: "Franklin Gothic Medium";
+    font-size: 15px;
+
+}
 /*h1 {
 
-    font-size: 1.8em;
+    font-size: 1.8em
     margin: 10px 0 5px 0;
 
  } */
@@ -18,14 +41,15 @@ h2 {
 
     font-size: 65px;
     font-family: "Gloria Hallelujah", cursive;
-    margin: 25px 25px 25px 10px;
-    padding-bottom: 80px;
+    margin: 10px 10px 10px 10px;
+    padding-bottom: 70px;
     padding-left: 450px;
-    background: #f0f8ff url("http://www.costulessdirect.com/wp-content/uploads/2015/06/Heart-Healthy-Foods.jpg");
-    background-size:cover;
+    background-image: #f0f8ff url("http://www.costulessdirect.com/wp-content/uploads/2015/06/Heart-Healthy-Foods.jpg");
+    background-size: cover;
     min-height: 230px;
     color: red;
  }
+
 
 h3{
     font-size: 50px;
@@ -36,8 +60,6 @@ h3{
     min-height: 230px;
     margin: 10px 0 5px 0;
     color: darkred;
-
-
 }
 
 h4{
@@ -47,7 +69,9 @@ h4{
 }
 
 table {
-    font-family: "Gloria Hallelujah", cursive;
+    font-family: "Gentium Book Basic";
+    color: darkgreen;
+    background-color: #dddddd;
     border-collapse: collapse;
     width: 100%;
 }
@@ -76,5 +100,5 @@ ul, ol {
 
 header {
      padding: 120px;
-     min-height: 140px;
+     min-height: 100px;
  }
