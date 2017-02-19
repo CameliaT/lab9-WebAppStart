@@ -23,12 +23,13 @@ public class KidsRecipes extends HttpServlet {
         counter++;
 
         //get input as string
+        String type = request.getParameter("type");
         String name = request.getParameter("name");
         String ingredients = request.getParameter("ingredients");
         String instructions = request.getParameter("instructions");
         String duration = request.getParameter("duration");
-        String type = request.getParameter("type");
-        Recipes recipes = new Recipes(name, ingredients, instructions, duration, type);
+
+        Recipes recipe = new Recipes(name, ingredients, instructions, duration, type);
 
 
 
@@ -40,8 +41,8 @@ public class KidsRecipes extends HttpServlet {
 
       try {
             out.println("<h3>CookBook</h3>");
-            recipeRepository.insert(recipes);
-            out.println("<b>"+ recipes.toString()+ "</b><br />");
+            recipeRepository.insert(recipe);
+            out.println("<b>"+ recipe.toString()+ "</b><br />");
         } catch (ClassNotFoundException e) {
             out.println("<div class='error'><b>Unable initialize database connection<b></div>");
         } catch (SQLException e){

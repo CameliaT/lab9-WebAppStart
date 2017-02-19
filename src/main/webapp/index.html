@@ -1,20 +1,18 @@
-<>
-<head>
+<head xmlns="http://www.w3.org/1999/html">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 
-
-<br>
+<body>
     <h2>Kids CookBook!</h2><br>
 
     <form action="kidsRecipes" method="post">
         <select name="type">Type
            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-            <option value="desert">Desert</option>
+           <option value="lunch">Lunch</option>
+           <option value="dinner">Dinner</option>
+           <option value="desert">Desert</option>
         </select></br></br>
 
         <p> Name:  <input type="text" name="name"/><br />
@@ -22,13 +20,13 @@
         Instructions: <input type="text" name="instructions"/><br />
         Duration: <input type="text" name="duration"/><br /> </p>
 
-        <input type="submit" value="Submit"/>&nbsp;
+       <p> <input type="submit" value="Submit"/>&nbsp; </p>
 
-    </form></br>
+    </form>
 
 
     <form action="kidsRecipes" method="get">
-        <input type="submit" value="Get Recipes"/>
+       <p> <input type="submit" value="Get Recipes"/> </p>
     </form>
 
 </body>

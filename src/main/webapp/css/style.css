@@ -1,34 +1,34 @@
-body {
-   background-color: lightgreen;
-    background-image: url("http://www.chainimage.com/images/healthy-food-for-kids-healthy-food-house.jpg");
+body{
+    background-color: lightgreen;
+    background-image: url("http://www.teletalmagazin.hu/wp-content/uploads/2016/01/cooking-healthy-food1280-x-853-160-kb-jpeg-x-1.jpg");
     background-size: cover;
-
-
 }
-p {
-    text-indent: 20px;
+
+p{
+    margin-left: 200px;
     font-family: "Gloria Hallelujah", cursive;
     font-size: 20px;
-    color: black;
-    padding-left: 30px;
+    color: darkgreen;
+    font-weight: bold;
  }
 
-select {
-    margin-left: 180px;
+select{
+    margin-left: 80px;
     margin-bottom: 30px;
-    background-color: antiquewhite;
-    font-size: 20px;
-    font-family: "Franklin Gothic Medium";
+    background-color: lightgreen;
+    font-size: 40px;
+    font-family: "Gloria Hallelujah", cursive;
+    color: darkgreen;
 }
 
-input {
-    align-items: center;
+input{
     margin-bottom: 10px;
-    margin-left: 20px;
-    background-color: azure;
-    font-family: "Franklin Gothic Medium";
+    margin-left: 15px;
+    background-color: lightgreen;
+    font-family: "Gloria Hallelujah", cursive;
     font-size: 15px;
-
+    font-weight: bold;
+    color: darkgreen;
 }
 /*h1 {
 
@@ -37,35 +37,39 @@ input {
 
  } */
 
-h2 {
-
-    font-size: 65px;
+h2{
+    font-size: 50px;
     font-family: "Gloria Hallelujah", cursive;
     margin: 10px 10px 10px 10px;
-    padding-bottom: 70px;
+    padding-bottom: 50px;
     padding-left: 450px;
-    background-image: #f0f8ff url("http://www.costulessdirect.com/wp-content/uploads/2015/06/Heart-Healthy-Foods.jpg");
     background-size: cover;
-    min-height: 230px;
-    color: red;
+    min-height: 130px;
+    color: darkgreen;
  }
 
 
 h3{
     font-size: 50px;
-    font-family: 'Pacifico', cursive;
-    padding-left: 850px;
-    background: #f0f8ff url("http://www.chegg.com/play/wp-content/uploads/sites/3/2013/02/cooking-college.jpg");
+    font-family: "Gloria Hallelujah", cursive;
+    padding-left: 600px;
     background-size:cover;
     min-height: 230px;
     margin: 10px 0 5px 0;
-    color: darkred;
+    color: darkgreen;
+}
+
+a{
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 20px;
 }
 
 h4{
     font-size: 50px;
-    font-family: "Gentium Book Basic";
-    color: darkred;
+    font-family: "Gloria Hallelujah", cursive;
+    color: darkgreen;
 }
 
 table {
@@ -84,6 +88,7 @@ td, th {
 .error {
     font-family: 'Lobster Two', cursive;
     color: darkred;
+    padding-bottom: 20px;
 }
 
 tr:nth-child(even){
@@ -93,10 +98,10 @@ tr:nth-child(even){
 strong {
     font-weight: bolder;
  }
-ul, ol {
-     margin-left: 50px;
- }
 
+ul, ol {
+     margin-left: 150px;
+ }
 
 header {
      padding: 120px;
