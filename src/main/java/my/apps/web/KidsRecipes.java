@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class KidsRecipes extends HttpServlet {
         String instructions = request.getParameter("instructions");
         String duration = request.getParameter("duration");
 
-        Recipes recipe = new Recipes(name, ingredients, instructions, duration, type);
+        Recipes recipe = new Recipes(type, name, ingredients, instructions, duration);
 
 
 
@@ -62,6 +63,8 @@ public class KidsRecipes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         counter++;
+
+        String type = req.getParameter("type");
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         out.println("<head>");
@@ -70,7 +73,7 @@ public class KidsRecipes extends HttpServlet {
         out.println("</head>");
 
         try {
-            out.println("<h4>Get Recipes</h4>");
+            out.println("<h4>Get Recipes "+type+"</h4>");
             out.println("<table>");
             out.println("<tr>");
             out.println("<th>Id</th>");
@@ -81,7 +84,13 @@ public class KidsRecipes extends HttpServlet {
             out.println("<th>Duration</th>");
             out.println("</tr>");
 
-            List<Recipes> recipes = recipeRepository.read();
+            List<Recipes> recipes;
+            if("all".equals(type)) {
+                recipes = recipeRepository.read();
+            } else {
+                recipes = recipeRepository.read(type);
+            }
+
             for (Recipes recipe : recipes){
                 out.println("<tr>");
                 out.println("<td>"+recipe.getId()+"</td>");

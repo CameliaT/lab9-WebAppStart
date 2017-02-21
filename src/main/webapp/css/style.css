@@ -1,6 +1,5 @@
 body{
-    background-color: lightgreen;
-    background-image: url("http://www.teletalmagazin.hu/wp-content/uploads/2016/01/cooking-healthy-food1280-x-853-160-kb-jpeg-x-1.jpg");
+    background: lightgreen url('../images/cooking-wallpaper.jpg');
     background-size: cover;
 }
 
